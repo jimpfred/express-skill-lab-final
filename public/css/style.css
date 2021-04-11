@@ -1,4 +1,27 @@
-/*h1 {
+* {
+    box-sizing: border-box;
+    font-family: Helvetica;
+    text-align: center;
+}
+header {
+    font-size: 2.0em;
+    padding: 15px;
+    text-align: center;
+    background-color: BLACK;
     color: white;
-    background-color: rebeccapurple;
+    font-weight: bolder;
+}
+li {
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+}
+form {
+  margin: 10px
+}
+button {
+  font-size: 1em;
+}
+#indexForm {
+  margin: 50px;
 }

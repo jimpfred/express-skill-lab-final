@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Your Skills</title>
 </head>
 <body>
-    <h1>Here are Your Skills as of <%= Date() %></h1>
-    <h2>Select Skill to See Details</h2>
-    <a href="/">Home</a>
+    <header>
+        <p>TRACK YOUR SKILLS</p>
+    </header>
+    <h1>Select skill to see details, click on trash can to delete.</h2>
     <ul>
         <% skills.forEach(function(skill, idx) { %>
             <li>
                 <form action="/skills/<%= idx %>?_method=DELETE" method="POST">
-                    <button type="submit">🗑</button>
-                </form>
-                <a href="/skills/<%= idx %>">
+                  <a href="/skills/<%= idx %>">
                     <%= skill.text %>
                     -
-                    <%= skill.acquired ? 'acquired' : 'not yet acquired' %>
-                </a>
+                    <%= skill.acquired ? 'acquired' : 'still working on it' %>
+                  </a>
+                    <button type="submit">🗑</button>
+                </form>
             </li>
        <% }) %>
     </ul>
-    <a href="/skills/new">Add Skill</a>
+    <form action="/skills/new">
+        <input type="submit" value="Create a new skill" />
+    </form> 
+    <form action="/">
+        <input type="submit" value="Home" />
+    </form>
 </body>
 </html>
